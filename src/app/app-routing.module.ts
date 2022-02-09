@@ -5,6 +5,7 @@ const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+// eslint-disable-next-line import/prefer-default-export
+export class AppRoutingModule {}
