@@ -1,1 +1,11 @@
-<p>search works!</p>
+<form class="search">
+    <input
+      class="search__input"
+      type="text"
+      [placeholder]="searchPlaceholder"
+      name="search"
+    />
+    <button class="search__submit" type="submit" (onsubmit)="searchSubmit($event)">
+        {{searchButtonText}}
+    </button>
+  </form>

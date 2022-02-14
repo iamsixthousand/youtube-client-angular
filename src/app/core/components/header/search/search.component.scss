@@ -1,0 +1,24 @@
+@import '/src/styles.scss';
+
+.search {
+    &__input {
+        width: 400px;
+        height: 25px;
+        border: none;
+    }
+
+    &__submit {
+        background-color: var(--secondary-bg);
+        color: $white-color;
+        width: 80px;
+        height: 27px;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        box-sizing: border-box;
+        cursor: pointer;
+        opacity: 0.8;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

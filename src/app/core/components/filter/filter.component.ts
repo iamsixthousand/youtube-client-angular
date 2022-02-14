@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-useless-constructor */
-/* eslint-disable @typescript-eslint/no-empty-function */
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
 })
-export class FilterComponent {
-}
+export class FilterComponent {}
