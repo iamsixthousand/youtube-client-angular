@@ -17,6 +17,8 @@ import { LikesComponent } from './core/components/screen/card/card-stats/likes/l
 import { DislikesComponent } from './core/components/screen/card/card-stats/dislikes/dislikes.component';
 import { ViewsComponent } from './core/components/screen/card/card-stats/views/views.component';
 import { CommentsComponent } from './core/components/screen/card/card-stats/comments/comments.component';
+import { ShortNumberPipe } from './pipes/shortumber.pipe';
+import { CardInfoButtonComponent } from './core/components/screen/card/card-info-button/card-info-button.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { CommentsComponent } from './core/components/screen/card/card-stats/comm
     DislikesComponent,
     ViewsComponent,
     CommentsComponent,
+    ShortNumberPipe,
+    CardInfoButtonComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

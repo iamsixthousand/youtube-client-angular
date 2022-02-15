@@ -41,11 +41,11 @@
 
   &__item-label {
     text-decoration: underline;
-    color: $red-color;
+    color: var(--red-color);
   }
 
   &__item-text-input {
-    width: 200px;
+    width: 12rem;
     margin-left: 0.8rem;
   }
 }

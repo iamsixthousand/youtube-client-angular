@@ -1,27 +1,19 @@
 <div class="card">
-    <div class="card__content">
-        <img src="" alt="Card image">
-        <!-- <div class="card__stats">
-            <div class="card__stats-item">
-                <img src="" alt="I">
-                <span>0</span>
-            </div>
-            <div class="card__stats-item">
-                <img src="" alt="I">
-                <span>0</span>
-            </div>
-            <div class="card__stats-item">
-                <img src="" alt="I">
-                <span>0</span>
-            </div>
-            <div class="card__stats-item">
-                <img src="" alt="I">
-                <span>0</span>
-            </div>
-        </div> -->
-        <app-card-stats></app-card-stats>
-        <span class="card__title">{{cardName}}</span>
-        
+  <div class="card__content">
+    <img
+      class="card__post-image"
+      [src]="post?.snippet?.thumbnails?.medium?.url"
+      alt="Card image"
+    />
+    <app-card-stats [stats]="post?.statistics"></app-card-stats>
+    <div class="card__title-container">
+      <span class="card__title">{{ post?.snippet?.title }}</span>
     </div>
-    <div class="card__more-wrapper"></div>
+  </div>
+  <div class="card__more-wrapper">
+    <app-card-info-button></app-card-info-button>
+  </div>
+  <div class="card__color-indicator-wrapper">
+    <div class="card__color-indicator"></div>
+  </div>
 </div>

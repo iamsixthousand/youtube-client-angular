@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-useless-constructor */
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PostItem } from 'src/interfaces/youtube';
 
 @Component({
   selector: 'app-card',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  cardName = 'Youtube Card';
+  @Input()
+  post?: PostItem;
 }

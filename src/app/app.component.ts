@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostItem } from 'src/interfaces/youtube';
+import data from '../response.json';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'youtube-client-angular';
 
+  posts: PostItem[] = data.items;
+
   ngOnInit(): void {
-    console.log(this.title);
+    console.log(this.posts);
   }
 }
