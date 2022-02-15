@@ -13,6 +13,10 @@ import { LoginInfoComponent } from './core/components/header/login-info/login-in
 import { CardComponent } from './core/components/screen/card/card.component';
 import { CardStatsComponent } from './core/components/screen/card/card-stats/card-stats.component';
 import { ScreenComponent } from './core/components/screen/screen.component';
+import { LikesComponent } from './core/components/screen/card/card-stats/likes/likes.component';
+import { DislikesComponent } from './core/components/screen/card/card-stats/dislikes/dislikes.component';
+import { ViewsComponent } from './core/components/screen/card/card-stats/views/views.component';
+import { CommentsComponent } from './core/components/screen/card/card-stats/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { ScreenComponent } from './core/components/screen/screen.component';
     CardComponent,
     CardStatsComponent,
     ScreenComponent,
+    LikesComponent,
+    DislikesComponent,
+    ViewsComponent,
+    CommentsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

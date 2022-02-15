@@ -1,9 +1,16 @@
 @import '/src/styles.scss';
 
 .screen {
-    min-height: 800px;
+    min-height: 500px;
     height: 100%;
     display: flex;
-    align-items: center;
+    padding-top: 2rem;
+    align-items: flex-start;
     justify-content: center;
+
+    &__card-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1.5rem;
+    }
 }
