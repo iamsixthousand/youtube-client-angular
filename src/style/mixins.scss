@@ -1,0 +1,19 @@
+@mixin base-shadow($color) {
+    box-shadow: rem(0) rem(0) rem(8) $color;
+  }
+
+@mixin base-button-behavior {
+    @include base-shadow(var(--shadow-black));
+  
+    &:hover {
+      transition: 1s;
+      opacity: 1;
+      @include base-shadow(var(--shadow-black));
+    }
+  
+    &:active {
+      transition: 1s;
+      background-color: var(--shadow-black);
+      @include base-shadow(var(--shadow-black));
+    }
+  }

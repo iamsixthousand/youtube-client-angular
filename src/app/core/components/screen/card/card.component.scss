@@ -6,9 +6,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: baseline;
-    width: 250px;
+    width: 16rem;
     height: 20rem;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     box-shadow: var(--shadow-black) 1.95px 1.95px 2.6px;
     overflow: hidden;
 
@@ -33,7 +33,7 @@
     }
 
     &__post-image {
-        width: 200px;
+        width: 12.5rem;
         margin-top: 1rem;
     }
 
@@ -52,10 +52,13 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        height: 3rem;
     }
 
     &__title {
         display: block;
+        height: 3rem;
+        width: 14rem;
         color: var(--grey-color);
         font-weight: 500;
         align-items: center;
@@ -63,6 +66,9 @@
         flex-direction: column;
         font-size: var(--medium-font-size);
         text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     &__more-wrapper {

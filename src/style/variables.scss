@@ -1,5 +1,7 @@
+@import "./functions.scss";
+
 :root {
-  --main-bg: rgba(204, 200, 200, 0.486);
+  --main-bg: rgba(204, 200, 200, 0.685);
   --secondary-bg: rgb(207, 26, 26);
   --red-color: rgb(207, 26, 26);
   --grey-color: rgb(112, 107, 107);
@@ -8,5 +10,12 @@
   --orange-color: rgb(252, 172, 24);
   --blue-color: rgb(43, 99, 221);
   --shadow-black: rgba(0, 0, 0, 0.15);
-  --medium-font-size: 1.2rem;
+  --large-font-size: 1.2rem;
+  --medium-font-size: 1rem;
+  --screen-bg: rgb(168, 151, 151);
 }
+
+$large-screen: rem(1920);
+$medium-screen: rem(1200);
+$small-screen: rem(900);
+$mobile-screen: rem(400);

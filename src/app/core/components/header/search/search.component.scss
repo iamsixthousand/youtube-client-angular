@@ -5,6 +5,10 @@
         width: 25rem;
         height: 1.5rem;
         border: none;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     &__submit {

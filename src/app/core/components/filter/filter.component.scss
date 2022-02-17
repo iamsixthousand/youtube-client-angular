@@ -8,6 +8,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  margin-top: 5rem;
+  backdrop-filter: blur(0.4rem);
+  z-index: 9;
 
   &__wrapper {
     display: flex;
@@ -40,6 +44,7 @@
   }
 
   &__item-label {
+    cursor: pointer;
     text-decoration: underline;
     color: var(--red-color);
   }
@@ -47,5 +52,6 @@
   &__item-text-input {
     width: 12rem;
     margin-left: 0.8rem;
+    outline: none;
   }
 }

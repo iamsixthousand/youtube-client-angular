@@ -1,18 +1,18 @@
 <div class="card__stats">
-    <div>
+    <div class="card__stats-element">
         <app-card-stats-views></app-card-stats-views>
-        {{stats?.viewCount}}
+        {{stats?.viewCount | shortNumber}}
     </div>
-    <div>
+    <div class="card__stats-element">
         <app-card-stats-likes></app-card-stats-likes>
-        {{stats?.likeCount}}
+        {{stats?.likeCount | shortNumber}}
     </div>
-    <div>
+    <div class="card__stats-element">
         <app-card-stats-dislikes></app-card-stats-dislikes>
-        {{stats?.dislikeCount}}
+        {{stats?.dislikeCount | shortNumber}}
     </div>
-    <div>
+    <div class="card__stats-element">
         <app-card-stats-comments></app-card-stats-comments>
-        {{stats?.commentCount}}
+        {{stats?.commentCount | shortNumber}}
     </div>
 </div>
