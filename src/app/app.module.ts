@@ -25,6 +25,8 @@ import { LoginPageComponent } from './core/components/screen/pages/login-page/lo
 import { RegistrationPageComponent } from './core/components/screen/pages/registration-page/registration-page.component';
 import { RegistrationComponent } from './core/components/screen/components/registration/registration.component';
 import { LoginComponent } from './core/components/screen/components/login/login.component';
+import { MainPageComponent } from './core/components/screen/pages/main-page/main-page.component';
+import { StartComponent } from './core/components/screen/components/start/start.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { LoginComponent } from './core/components/screen/components/login/login.
     RegistrationPageComponent,
     RegistrationComponent,
     LoginComponent,
+    MainPageComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule,

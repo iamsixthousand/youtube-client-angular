@@ -11,6 +11,6 @@ export class LogoComponent {
   constructor(private readonly router: Router) {}
 
   toTheMainPage() {
-    this.router.navigate([RouterPath.SearchResultPage]);
+    this.router.navigate([RouterPath.Main]);
   }
 }
