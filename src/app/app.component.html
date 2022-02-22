@@ -1,10 +1,8 @@
 <header>
-      <app-header></app-header>
-      <app-filter *ngIf="$isFilterVisible | async"></app-filter>
+  <app-header></app-header>
+  <app-filter *ngIf="$isFilterVisible | async"></app-filter>
 </header>
 
 <main>
-   <app-screen [posts]="posts"></app-screen>
+  <app-screen></app-screen>
 </main>
-
-<router-outlet></router-outlet>

@@ -1,3 +1,5 @@
+@import '/src/styles.scss';
+
 .login-info {
     position: absolute;
     right: 10%;
@@ -8,4 +10,23 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    
+    &__profile-icon {
+        @include icon-element;
+    }
+}
+
+.fa-user-circle {
+    cursor: pointer;
+    font-size: rem(25);
+    color: var(--black-color);
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:active {
+        color: var(--secondary-bg);
+    }
 }

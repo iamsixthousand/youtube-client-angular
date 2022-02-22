@@ -1,19 +1,24 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { PostItem } from 'src/interfaces/youtube';
+import data from 'src/response.json';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SearchServiceService {
+  postData: PostItem[] = data.items;
+
   #showFilter: boolean = false;
 
-  #showFilterFlag = new BehaviorSubject(this.#showFilter);
+  #showFilterFlag: BehaviorSubject<boolean> = new BehaviorSubject(
+    this.#showFilter
+  );
 
-  showFilterFlag = this.#showFilterFlag.asObservable();
+  showFilterFlag: Observable<boolean> = this.#showFilterFlag.asObservable();
 
   toggleFilter() {
     this.#showFilter = !this.#showFilter;
     this.#showFilterFlag.next(this.#showFilter);
-    console.log('toggled', this.#showFilter);
   }
 }

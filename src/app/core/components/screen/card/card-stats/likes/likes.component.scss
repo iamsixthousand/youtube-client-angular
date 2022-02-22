@@ -1,5 +1,5 @@
+@import "/src/styles.scss";
+
 .card__stats-likes-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  @include card-stats-element;
 }

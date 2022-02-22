@@ -3,7 +3,7 @@
 .search {
     &__input {
         width: 25rem;
-        height: 1.5rem;
+        height: rem(25);
         border: none;
 
         &:focus {
@@ -15,9 +15,9 @@
         background-color: var(--secondary-bg);
         color: var(--white-color);
         width: 5rem;
-        height: 27px;
+        height: rem(27);
         border: none;
-        border-radius: 0 4px 4px 0;
+        border-radius: 0 rem(4) rem(4) 0;
         box-sizing: border-box;
         cursor: pointer;
         opacity: 0.8;

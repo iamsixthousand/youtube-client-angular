@@ -4,15 +4,18 @@
   --main-bg: rgba(204, 200, 200, 0.685);
   --secondary-bg: rgb(207, 26, 26);
   --red-color: rgb(207, 26, 26);
+  --black-color: rgb(0, 0, 0);
   --grey-color: rgb(112, 107, 107);
   --white-color: white;
   --green-color: rgb(22, 148, 22);
-  --orange-color: rgb(252, 172, 24);
+  --yellow-color: rgb(252, 237, 24);
   --blue-color: rgb(43, 99, 221);
   --shadow-black: rgba(0, 0, 0, 0.15);
   --large-font-size: 1.2rem;
   --medium-font-size: 1rem;
-  --screen-bg: rgb(168, 151, 151);
+  --screen-bg: rgba(70, 66, 66, 0.884);
+  --page-padding-top: 9rem;
+  --page-padding-bottom: 5rem;
 }
 
 $large-screen: rem(1920);

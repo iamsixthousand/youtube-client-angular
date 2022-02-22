@@ -1,33 +1,11 @@
 @import '/src/styles.scss';
 
 .screen {
-    min-height: 30rem;
+    min-height: calc(100vh - var(--page-padding-top) - var(--page-padding-bottom));
     height: 100%;
     display: flex;
     padding: 9rem 0 5rem 0;
     align-items: flex-start;
     justify-content: center;
     background-color: var(--screen-bg);
-
-    &__card-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: $medium-screen) {
-    .screen {
-        &__card-wrapper {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-    }
-}
-
-@media (max-width: $small-screen) {
-    .screen {
-        &__card-wrapper {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
 }

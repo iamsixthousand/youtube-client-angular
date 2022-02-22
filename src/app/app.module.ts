@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/components/header/header.component';
@@ -19,6 +20,11 @@ import { ViewsComponent } from './core/components/screen/card/card-stats/views/v
 import { CommentsComponent } from './core/components/screen/card/card-stats/comments/comments.component';
 import { ShortNumberPipe } from './pipes/shortumber.pipe';
 import { CardInfoButtonComponent } from './core/components/screen/card/card-info-button/card-info-button.component';
+import { SearchResultPageComponent } from './core/components/screen/pages/search-result-page/search-result-page.component';
+import { LoginPageComponent } from './core/components/screen/pages/login-page/login-page.component';
+import { RegistrationPageComponent } from './core/components/screen/pages/registration-page/registration-page.component';
+import { RegistrationComponent } from './core/components/screen/components/registration/registration.component';
+import { LoginComponent } from './core/components/screen/components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +44,18 @@ import { CardInfoButtonComponent } from './core/components/screen/card/card-info
     CommentsComponent,
     ShortNumberPipe,
     CardInfoButtonComponent,
+    SearchResultPageComponent,
+    LoginPageComponent,
+    RegistrationPageComponent,
+    RegistrationComponent,
+    LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FontAwesomeModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

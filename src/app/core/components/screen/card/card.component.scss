@@ -9,7 +9,7 @@
     width: 16rem;
     height: 20rem;
     border-radius: 0.5rem;
-    box-shadow: var(--shadow-black) 1.95px 1.95px 2.6px;
+    box-shadow: var(--shadow-black) rem(1.95) rem(1.95) rem(2.6);
     overflow: hidden;
 
     &__content {
@@ -44,7 +44,22 @@
 
     &__color-indicator {
         height: 0.5rem;
-        background-color: var(--blue-color);
+
+        &.default {
+            background-color: var(--red-color);
+        }
+
+        &.blue {
+            background-color: var(--blue-color);
+        }
+
+        &.green {
+            background-color: var(--green-color);
+        }
+
+        &.yellow {
+            background-color: var(--yellow-color);
+        }
     }
 
     &__title-container {
