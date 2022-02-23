@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
 })
-export class FilterComponent {}
+export class FilterComponent {
+  isInputDisabled: boolean = true;
+
+  sortByWordInputAccessToggle() {
+    this.isInputDisabled = !this.isInputDisabled;
+  }
+}

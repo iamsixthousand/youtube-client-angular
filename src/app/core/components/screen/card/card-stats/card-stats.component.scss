@@ -1,18 +1,18 @@
-@import '/src/styles.scss';
+@import "/src/styles.scss";
 
 .card__stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: rem(13);
+
+  &-element {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    font-size: 0.8rem;
-
-    &-element {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 0.2rem;
-    }
+    justify-content: center;
+    gap: rem(3.5);
+  }
 }

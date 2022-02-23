@@ -1,23 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { SearchServiceService } from 'src/app/core/services/search-service.service';
+import {
+  STRING_CONSTANTS_TOKEN,
+  STRINGS_CONSTANTS,
+  StringConstants,
+} from 'src/app/constants/string-constants';
 import { RouterPath } from 'src/app/routes.enum';
-import stringConstants from 'src/constants/constants';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
+  providers: [
+    { provide: STRING_CONSTANTS_TOKEN, useFactory: () => STRINGS_CONSTANTS },
+  ],
 })
 export class SearchComponent {
+  searchPlaceholder = this.stringsConstants.searchPlaceholderValue;
+
+  searchButtonText = this.stringsConstants.searchButtonSubmit;
+
   constructor(
-    private readonly searchService: SearchServiceService,
-    private readonly router: Router
+    private readonly router: Router,
+    @Inject(STRING_CONSTANTS_TOKEN)
+    private readonly stringsConstants: StringConstants
   ) {}
-
-  searchPlaceholder = stringConstants.searchPlaceholderValue;
-
-  searchButtonText = stringConstants.searchButtonSubmit;
 
   showResults(event: Event) {
     event.preventDefault();

@@ -9,9 +9,9 @@ import { RouterPath } from 'src/app/routes.enum';
   styleUrls: ['./login-info.component.scss'],
 })
 export class LoginInfoComponent {
-  constructor(private readonly router: Router) {}
-
   faUserCircle = faUserCircle;
+
+  constructor(private readonly router: Router) {}
 
   toTheLoginPage() {
     this.router.navigate([RouterPath.Login]);

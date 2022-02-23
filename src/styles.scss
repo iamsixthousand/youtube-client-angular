@@ -1,12 +1,16 @@
 @import "./style/variables.scss";
 @import "./style/mixins.scss";
 @import "./style/functions.scss";
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "~normalize.css/normalize.css";
 
 :root {
-  font-size: 16px;
+  font-size: 17px;
 }
 
-html,body {
+html,
+body {
   height: 100%;
 }
 body {

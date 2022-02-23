@@ -1,22 +1,23 @@
 @import "/src/styles.scss";
 
 .card__more-button-wrapper {
-  height: 5rem;
+  height: rem(80);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .card__more-button {
-    background-color: var(--red-color);
-    color: var(--white-color);
-    cursor: pointer;
-    border: none;
-    border-radius: 0.25rem;
-    height: 2rem;
-    width: 5rem;
-    opacity: 0.8;
-    &:hover {
-        opacity: 1;
-    }
+  @include base-button-element;
+  background-color: var(--red-color);
+  color: var(--white-color);
+  cursor: pointer;
+  border: none;
+  border-radius: rem(4);
+  height: 2rem;
+  width: 5rem;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
 }

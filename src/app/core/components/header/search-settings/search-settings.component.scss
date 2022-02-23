@@ -1,7 +1,7 @@
-@import 'src/styles.scss';
+@import "src/styles.scss";
 
 .search__settings-button {
-  @include base-button-behavior;
+  @include base-button-element;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,27 +12,27 @@
   background: var(--red-color);
   border-radius: rem(5);
   opacity: 0.8;
-  transition: 1s;
+  transition: var(--transition-time);
   cursor: pointer;
 
   &:hover {
     .top {
       &::before {
-        transition: 1s;
+        transition: var(--transition-time);
         transform: translateX(-(rem(6)));
       }
     }
 
     .middle {
       &::before {
-        transition: 1s;
+        transition: var(--transition-time);
         transform: translateX(rem(6));
       }
     }
 
     .bottom {
       &::before {
-        transition: 1s;
+        transition: var(--transition-time);
         transform: translateX(-(rem(6)));
       }
     }
@@ -51,7 +51,7 @@
 .top {
   position: relative;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -(rem(1));
     right: rem(2);
@@ -59,14 +59,14 @@
     border-radius: rem(1.75);
     width: rem(3.5);
     height: rem(3.5);
-    transition: 1s;
+    transition: var(--transition-time);
   }
 }
 
 .middle {
   position: relative;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -(rem(1));
     left: rem(2);
@@ -74,14 +74,14 @@
     border-radius: rem(1.75);
     width: rem(3.5);
     height: rem(3.5);
-    transition: 1s;
+    transition: var(--transition-time);
   }
 }
 
 .bottom {
   position: relative;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -(rem(1));
     right: rem(2);
@@ -89,6 +89,6 @@
     border-radius: rem(1.75);
     width: rem(3.5);
     height: rem(3.5);
-    transition: 1s;
+    transition: var(--transition-time);
   }
 }

@@ -26,7 +26,6 @@ const routes: Routes = [
   {
     path: RouterPath.Redirect,
     redirectTo: RouterPath.Main,
-    // pathMatch: 'full',
   },
 ];
 

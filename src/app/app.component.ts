@@ -8,10 +8,8 @@ import { SearchServiceService } from './core/services/search-service.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private readonly searchService: SearchServiceService) {}
-
   public $isFilterVisible: Observable<boolean> =
-    this.searchService.showFilterFlag;
+    this.searchService.$showFilterFlag;
 
-  showFilter: boolean = false;
+  constructor(private readonly searchService: SearchServiceService) {}
 }

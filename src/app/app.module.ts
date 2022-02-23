@@ -27,6 +27,11 @@ import { RegistrationComponent } from './core/components/screen/components/regis
 import { LoginComponent } from './core/components/screen/components/login/login.component';
 import { MainPageComponent } from './core/components/screen/pages/main-page/main-page.component';
 import { StartComponent } from './core/components/screen/components/start/start.component';
+import { ViewsIconComponent } from './core/components/screen/card/card-stats/views/views-icon/views-icon.component';
+import { LikesIconComponent } from './core/components/screen/card/card-stats/likes/likes-icon/likes-icon.component';
+import { DislikesIconComponent } from './core/components/screen/card/card-stats/dislikes/dislikes-icon/dislikes-icon.component';
+import { CommentsIconComponent } from './core/components/screen/card/card-stats/comments/comments-icon/comments-icon.component';
+import { LogoIconComponent } from './core/components/header/logo/logo-icon/logo-icon.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +58,11 @@ import { StartComponent } from './core/components/screen/components/start/start.
     LoginComponent,
     MainPageComponent,
     StartComponent,
+    ViewsIconComponent,
+    LikesIconComponent,
+    DislikesIconComponent,
+    CommentsIconComponent,
+    LogoIconComponent,
   ],
   imports: [
     BrowserModule,

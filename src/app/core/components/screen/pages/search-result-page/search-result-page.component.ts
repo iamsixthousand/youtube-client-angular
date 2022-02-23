@@ -9,12 +9,12 @@ import { PostItem } from 'src/interfaces/youtube';
   styleUrls: ['./search-result-page.component.scss'],
 })
 export class SearchResultPageComponent {
-  constructor(private readonly searchService: SearchServiceService) {}
-
   public $isContentVisible: Observable<boolean> =
-    this.searchService.showFilterFlag;
+    this.searchService.$showFilterFlag;
 
   posts?: PostItem[];
+
+  constructor(private readonly searchService: SearchServiceService) {}
 
   ngOnInit(): void {
     this.posts = this.searchService.postData;

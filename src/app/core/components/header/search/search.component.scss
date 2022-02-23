@@ -1,33 +1,37 @@
-@import '/src/styles.scss';
+@import "/src/styles.scss";
 
 .search {
-    &__input {
-        width: 25rem;
-        height: rem(25);
-        border: none;
+  &__input {
+    width: 25rem;
+    height: rem(27);
+    border: none;
+    font-size: rem(14);
+    font-weight: var(--semi-bold);
+    line-height: 2;
+    box-sizing: border-box;
+    &:focus {
+      outline: none;
+    }
+  }
 
-        &:focus {
-            outline: none;
-        }
+  &__submit {
+    background-color: var(--secondary-bg);
+    color: var(--white-color);
+    width: 5rem;
+    height: rem(27);
+    border: none;
+    line-height: 1;
+    border-radius: 0 rem(4) rem(4) 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
     }
 
-    &__submit {
-        background-color: var(--secondary-bg);
-        color: var(--white-color);
-        width: 5rem;
-        height: rem(27);
-        border: none;
-        border-radius: 0 rem(4) rem(4) 0;
-        box-sizing: border-box;
-        cursor: pointer;
-        opacity: 0.8;
-
-        &:hover {
-            opacity: 1;
-        }
-
-        &:active {
-            background-color: var(--grey-color);
-        }
+    &:active {
+      background-color: var(--grey-color);
     }
+  }
 }

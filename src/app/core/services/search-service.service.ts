@@ -15,7 +15,7 @@ export class SearchServiceService {
     this.#showFilter
   );
 
-  showFilterFlag: Observable<boolean> = this.#showFilterFlag.asObservable();
+  $showFilterFlag: Observable<boolean> = this.#showFilterFlag.asObservable();
 
   toggleFilter() {
     this.#showFilter = !this.#showFilter;

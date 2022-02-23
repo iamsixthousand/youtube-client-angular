@@ -1,11 +1,13 @@
-@import '/src/styles.scss';
+@import "/src/styles.scss";
 
 .screen {
-    min-height: calc(100vh - var(--page-padding-top) - var(--page-padding-bottom));
-    height: 100%;
-    display: flex;
-    padding: 9rem 0 5rem 0;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: var(--screen-bg);
+  min-height: calc(
+    100vh - var(--page-padding-top) - var(--page-padding-bottom)
+  );
+  height: 100%;
+  display: flex;
+  padding: 9rem 0 5rem 0;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: var(--screen-bg);
 }
