@@ -1,0 +1,5 @@
+@import "/src/styles.scss";
+
+.card__stats-dislikes-container {
+  @include card-stats-element;
+}

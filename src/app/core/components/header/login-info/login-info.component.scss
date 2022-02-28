@@ -1,0 +1,33 @@
+@import "/src/styles.scss";
+
+.login-info {
+  position: absolute;
+  right: 10%;
+  height: 1rem;
+  top: calc(5rem / 2 - 0.5rem);
+  display: flex;
+  gap: rem(13);
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 50%;
+
+  &__profile-icon {
+    @include icon-element;
+  }
+}
+
+.fa-user-circle {
+  cursor: pointer;
+  font-size: rem(25);
+  color: var(--black-color);
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    color: var(--secondary-bg);
+  }
+}

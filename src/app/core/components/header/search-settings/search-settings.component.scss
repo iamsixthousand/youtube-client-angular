@@ -1,0 +1,94 @@
+@import "src/styles.scss";
+
+.search__settings-button {
+  @include base-button-element;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: rem(4.5);
+  width: rem(24);
+  margin-left: rem(14.5);
+  background: var(--red-color);
+  border-radius: rem(5);
+  opacity: 0.8;
+  transition: var(--transition-time);
+  cursor: pointer;
+
+  &:hover {
+    .top {
+      &::before {
+        transition: var(--transition-time);
+        transform: translateX(-(rem(6)));
+      }
+    }
+
+    .middle {
+      &::before {
+        transition: var(--transition-time);
+        transform: translateX(rem(6));
+      }
+    }
+
+    .bottom {
+      &::before {
+        transition: var(--transition-time);
+        transform: translateX(-(rem(6)));
+      }
+    }
+  }
+}
+
+.line {
+  display: block;
+  margin: rem(1.75);
+  width: rem(13.5);
+  height: rem(1.5);
+  background-color: var(--white-color);
+  border-radius: rem(1);
+}
+
+.top {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -(rem(1));
+    right: rem(2);
+    background-color: var(--white-color);
+    border-radius: rem(1.75);
+    width: rem(3.5);
+    height: rem(3.5);
+    transition: var(--transition-time);
+  }
+}
+
+.middle {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -(rem(1));
+    left: rem(2);
+    background-color: var(--white-color);
+    border-radius: rem(1.75);
+    width: rem(3.5);
+    height: rem(3.5);
+    transition: var(--transition-time);
+  }
+}
+
+.bottom {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -(rem(1));
+    right: rem(2);
+    background-color: var(--white-color);
+    border-radius: rem(1.75);
+    width: rem(3.5);
+    height: rem(3.5);
+    transition: var(--transition-time);
+  }
+}

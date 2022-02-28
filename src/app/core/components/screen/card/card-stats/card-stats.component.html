@@ -1,1 +1,18 @@
-<p>card-stats works!</p>
+<div class="card__stats" *ngIf="stats">
+  <div class="card__stats-element">
+    <app-card-stats-views></app-card-stats-views>
+    <div>{{ stats.viewCount | shortNumber }}</div>
+  </div>
+  <div class="card__stats-element">
+    <app-card-stats-likes></app-card-stats-likes>
+    <div>{{ stats.likeCount | shortNumber }}</div>
+  </div>
+  <div class="card__stats-element">
+    <app-card-stats-dislikes></app-card-stats-dislikes>
+    <div>{{ stats.dislikeCount | shortNumber }}</div>
+  </div>
+  <div class="card__stats-element">
+    <app-card-stats-comments></app-card-stats-comments>
+    <div>{{ stats.commentCount | shortNumber }}</div>
+  </div>
+</div>

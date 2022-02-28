@@ -1,0 +1,93 @@
+@import "/src/styles.scss";
+
+.card {
+  background-color: var(--main-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  width: 16rem;
+  height: 20rem;
+  border-radius: rem(8);
+  box-shadow: var(--shadow-black) rem(1.95) rem(1.95) rem(2.6);
+  overflow: hidden;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 14rem;
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__post-image {
+    width: rem(200);
+    height: rem(120);
+    margin-top: 1rem;
+  }
+
+  &__color-indicator-wrapper {
+    height: rem(8);
+    width: 100%;
+  }
+
+  &__color-indicator {
+    height: rem(8);
+
+    &.default {
+      background-color: var(--red-color);
+    }
+
+    &.blue {
+      background-color: var(--blue-color);
+    }
+
+    &.green {
+      background-color: var(--green-color);
+    }
+
+    &.yellow {
+      background-color: var(--yellow-color);
+    }
+  }
+
+  &__title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 3rem;
+  }
+
+  &__title {
+    display: block;
+    height: 3rem;
+    width: 14rem;
+    color: var(--grey-color);
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: var(--medium-font-size);
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__more-wrapper {
+    height: rem(88);
+  }
+}

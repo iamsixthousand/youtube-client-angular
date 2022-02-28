@@ -1,0 +1,28 @@
+@import "./functions.scss";
+
+:root {
+  --main-bg: rgba(204, 200, 200, 0.685);
+  --secondary-bg: rgb(207, 26, 26);
+  --red-color: rgb(207, 26, 26);
+  --black-color: rgb(0, 0, 0);
+  --grey-color: rgb(112, 107, 107);
+  --white-color: white;
+  --green-color: rgb(22, 148, 22);
+  --yellow-color: rgb(252, 237, 24);
+  --blue-color: rgb(43, 99, 221);
+  --shadow-black: rgba(0, 0, 0, 0.15);
+  --large-font-size: 1.2rem;
+  --medium-font-size: 1rem;
+  --screen-bg: rgba(70, 66, 66, 0.884);
+  --page-padding-top: 9rem;
+  --page-padding-bottom: 5rem;
+  --transition-time: 1s;
+  --transition-time-short: 0.2s;
+  --semi-bold: 500;
+  --bold: 600;
+}
+
+$large-screen: rem(1920);
+$medium-screen: rem(1200);
+$small-screen: rem(900);
+$mobile-screen: rem(400);

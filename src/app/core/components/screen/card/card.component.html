@@ -1,1 +1,22 @@
-<p>card works!</p>
+<div class="card">
+  <div class="card__content" *ngIf="post">
+    <img
+      class="card__post-image"
+      [src]="post.snippet.thumbnails.medium.url"
+      alt="Card image"
+    />
+    <app-card-stats [stats]="post.statistics"></app-card-stats>
+    <div class="card__title-container">
+      <span class="card__title">{{ post.snippet.title }}</span>
+    </div>
+  </div>
+  <div class="card__more-wrapper">
+    <app-card-info-button></app-card-info-button>
+  </div>
+  <div class="card__color-indicator-wrapper">
+    <div
+      class="card__color-indicator"
+      [ngClass]="setCardColorIndicator()"
+    ></div>
+  </div>
+</div>

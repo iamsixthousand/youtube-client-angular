@@ -1,0 +1,45 @@
+<div class="filter">
+  <div class="filter__wrapper">
+    <span class="filter__title">{{stringsForTemplate.sortingBy}}</span>
+    <ul class="filter__itemlist">
+      <li class="filter__item">
+        <input class="filter__item-input" (click)="filterCriteriaClicked($event)" name="filter" type="radio" id="date" #dateCriteria/>
+        <label class="filter__item-label" for="date">{{stringsForTemplate.date}}</label>
+        <fa-icon
+          *ngIf="dateCriteria.checked"
+          [ngClass]="arrowDirectionChange()"
+          (click)="changeOrder()"
+          class="sort-arrow"
+          [icon]="sortArrow"
+        ></fa-icon>
+      </li>
+      <li class="filter__item">
+        <input class="filter__item-input" (click)="filterCriteriaClicked($event)" name="filter" type="radio" id="views" #viewsCriteria/>
+        <label class="filter__item-label" for="views">{{stringsForTemplate.countOfViews}}</label>
+        <fa-icon
+          *ngIf="viewsCriteria.checked"
+          [ngClass]="arrowDirectionChange()"
+          (click)="changeOrder()"
+          class="sort-arrow"
+          [icon]="sortArrow"
+        ></fa-icon>
+      </li>
+      <li class="filter__item">
+        <input class="filter__item-input" (click)="filterCriteriaClicked($event)" name="filter" type="radio" id="word" #wordCriteria/>
+        <label
+          class="filter__item-label"
+          for="word"
+          >{{stringsForTemplate.wordOrSentance}}</label
+        >
+        <input
+          [disabled]="!wordCriteria.checked"
+          class="filter__item-text-input"
+          type="text"
+          [value]="currentFilterWordValue"
+          (input)="onInputChange($event)"
+          #wordInput
+        />
+      </li>
+    </ul>
+  </div>
+</div>

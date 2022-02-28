@@ -1,0 +1,5 @@
+@import "/src/styles.scss";
+
+.card__stats-views-container {
+  @include card-stats-element;
+}

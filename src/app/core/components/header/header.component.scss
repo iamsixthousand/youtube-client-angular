@@ -1,0 +1,14 @@
+@import "/src/styles.scss";
+
+.header {
+  width: 100%;
+  height: 5rem;
+  background-color: var(--main-bg);
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(rem(7));
+  z-index: 10;
+}
