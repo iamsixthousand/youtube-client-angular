@@ -32,6 +32,7 @@ import { LikesIconComponent } from './core/components/screen/card/card-stats/lik
 import { DislikesIconComponent } from './core/components/screen/card/card-stats/dislikes/dislikes-icon/dislikes-icon.component';
 import { CommentsIconComponent } from './core/components/screen/card/card-stats/comments/comments-icon/comments-icon.component';
 import { LogoIconComponent } from './core/components/header/logo/logo-icon/logo-icon.component';
+import { SortByCriteriaPipe } from './pipes/sort-by-criteria.pipe';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { LogoIconComponent } from './core/components/header/logo/logo-icon/logo-
     DislikesIconComponent,
     CommentsIconComponent,
     LogoIconComponent,
+    SortByCriteriaPipe,
   ],
   imports: [
     BrowserModule,

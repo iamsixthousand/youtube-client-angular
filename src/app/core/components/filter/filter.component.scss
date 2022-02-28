@@ -26,6 +26,7 @@
     flex-direction: row;
     align-self: center;
     justify-content: center;
+    user-select: none;
   }
 
   &__itemlist {
@@ -34,6 +35,14 @@
     display: flex;
     flex-direction: row;
     gap: rem(25);
+    user-select: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
   }
 
   &__item-input {
@@ -54,4 +63,17 @@
     margin-left: rem(13);
     outline: none;
   }
+}
+
+.rotate {
+  padding-bottom: rem(4);
+  transform: rotateX(180deg);
+}
+
+.sort-arrow {
+  cursor: pointer;
+  position: absolute;
+  color: var(--red-color);
+  top: rem(-1);
+  right: rem(-12);
 }

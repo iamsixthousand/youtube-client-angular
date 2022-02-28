@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SearchServiceService } from 'src/app/core/services/search-service.service';
+import { FilterSettings } from 'src/interfaces/filter';
 import { PostItem } from 'src/interfaces/youtube';
 
 @Component({
@@ -12,11 +13,11 @@ export class SearchResultPageComponent {
   public $isContentVisible: Observable<boolean> =
     this.searchService.$showFilterFlag;
 
+  @Input()
+  filterSettings?: FilterSettings;
+
+  @Input()
   posts?: PostItem[];
 
   constructor(private readonly searchService: SearchServiceService) {}
-
-  ngOnInit(): void {
-    this.posts = this.searchService.postData;
-  }
 }
