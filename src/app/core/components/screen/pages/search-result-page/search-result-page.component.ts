@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { SearchServiceService } from 'src/app/core/services/search-service.service';
 import { FilterSettings } from 'src/interfaces/filter';
 import { PostItem } from 'src/interfaces/youtube';
@@ -9,15 +9,38 @@ import { PostItem } from 'src/interfaces/youtube';
   templateUrl: './search-result-page.component.html',
   styleUrls: ['./search-result-page.component.scss'],
 })
-export class SearchResultPageComponent {
+export class SearchResultPageComponent implements OnInit, OnDestroy {
   public $isContentVisible: Observable<boolean> =
     this.searchService.$showFilterFlag;
 
-  @Input()
-  filterSettings?: FilterSettings;
-
-  @Input()
   posts?: PostItem[];
 
-  constructor(private readonly searchService: SearchServiceService) {}
+  posts$: Observable<PostItem[]>;
+
+  postsSubcripiton!: Subscription;
+
+  filterSettings?: FilterSettings;
+
+  filterSettings$: Observable<FilterSettings>;
+
+  filterSubcripiton!: Subscription;
+
+  constructor(private readonly searchService: SearchServiceService) {
+    this.posts$ = this.searchService.postDataObs$;
+    this.filterSettings$ = this.searchService.filterSettingsObs$;
+  }
+
+  ngOnInit(): void {
+    this.postsSubcripiton = this.posts$.subscribe((posts) => {
+      this.posts = posts;
+    });
+    this.filterSubcripiton = this.filterSettings$.subscribe((settings) => {
+      this.filterSettings = settings;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.postsSubcripiton.unsubscribe();
+    this.filterSubcripiton.unsubscribe();
+  }
 }

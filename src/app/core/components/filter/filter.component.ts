@@ -15,6 +15,7 @@ import {
   STRING_CONSTANTS_TOKEN,
 } from 'src/app/constants/string-constants';
 import { FilterSettings } from 'src/interfaces/filter';
+import { SearchServiceService } from '../../services/search-service.service';
 
 @Component({
   selector: 'app-filter',
@@ -48,14 +49,20 @@ export class FilterComponent implements OnDestroy {
   constructor(
     @Inject(FILTER_TOKEN) private readonly filterConstants: FilterConstants,
     @Inject(STRING_CONSTANTS_TOKEN)
-    private readonly stringConstants: StringConstants
+    private readonly stringConstants: StringConstants,
+    private readonly searchService: SearchServiceService
   ) {}
 
   filterCriteriaClicked(event: Event) {
     const radioInput = event.target as HTMLInputElement;
     this.currentFilterType = radioInput.id;
     this.order = this.filterConstants.order.decrease;
-    this.filterSet.emit({ filterType: '' });
+    this.searchService.filterSettingsSubj.next({
+      order: '',
+      filterType: '',
+      wordOrSentance: '',
+    });
+    // this.filterSet.emit({ filterType: '' });
 
     if (radioInput.id === this.filterConstants.type.date) {
       if (!this.inputsChecked.date) {
@@ -63,15 +70,25 @@ export class FilterComponent implements OnDestroy {
         this.inputsChecked.date = !this.inputsChecked.date;
         this.inputsChecked.views = false;
         this.inputsChecked.word = false;
-        this.filterSet.emit({
+        this.searchService.filterSettingsSubj.next({
           order: this.order,
           filterType: radioInput.id,
+          wordOrSentance: '',
         });
+        // this.filterSet.emit({
+        //   order: this.order,
+        //   filterType: radioInput.id,
+        // });
       } else {
         this.currentFilterWordValue = '';
         this.inputsChecked.date = !this.inputsChecked.date;
         radioInput.checked = !radioInput.checked;
-        this.filterSet.emit({ filterType: '' });
+        this.searchService.filterSettingsSubj.next({
+          order: '',
+          filterType: '',
+          wordOrSentance: '',
+        });
+        // this.filterSet.emit({ filterType: '' });
       }
     }
     if (radioInput.id === this.filterConstants.type.views) {
@@ -80,10 +97,15 @@ export class FilterComponent implements OnDestroy {
         this.inputsChecked.views = !this.inputsChecked.views;
         this.inputsChecked.date = false;
         this.inputsChecked.word = false;
-        this.filterSet.emit({
+        this.searchService.filterSettingsSubj.next({
           order: this.order,
           filterType: radioInput.id,
+          wordOrSentance: '',
         });
+        // this.filterSet.emit({
+        //   order: this.order,
+        //   filterType: radioInput.id,
+        // });
       } else {
         this.currentFilterWordValue = '';
         this.inputsChecked.views = !this.inputsChecked.views;
@@ -96,10 +118,15 @@ export class FilterComponent implements OnDestroy {
         this.inputsChecked.word = !this.inputsChecked.word;
         this.inputsChecked.views = false;
         this.inputsChecked.date = false;
-        this.filterSet.emit({
+        this.searchService.filterSettingsSubj.next({
           order: this.order,
           filterType: radioInput.id,
+          wordOrSentance: '',
         });
+        // this.filterSet.emit({
+        //   order: this.order,
+        //   filterType: radioInput.id,
+        // });
       } else {
         this.currentFilterWordValue = '';
         this.inputsChecked.word = !this.inputsChecked.word;
@@ -111,27 +138,42 @@ export class FilterComponent implements OnDestroy {
   onInputChange(event: Event) {
     const input = event.target as HTMLInputElement;
     this.currentFilterWordValue = input.value;
-    this.filterSet.emit({
+    this.searchService.filterSettingsSubj.next({
       order: this.order,
       filterType: this.filterConstants.type.word,
       wordOrSentance: this.currentFilterWordValue,
     });
+    // this.filterSet.emit({
+    //   order: this.order,
+    //   filterType: this.filterConstants.type.word,
+    //   wordOrSentance: this.currentFilterWordValue,
+    // });
   }
 
   changeOrder() {
     if (this.order === this.filterConstants.order.decrease) {
       this.order = this.filterConstants.order.increase;
-      this.filterSet.emit({
+      this.searchService.filterSettingsSubj.next({
         order: this.order,
         filterType: this.currentFilterType,
+        wordOrSentance: '',
       });
+      // this.filterSet.emit({
+      //   order: this.order,
+      //   filterType: this.currentFilterType,
+      // });
       return;
     }
     this.order = this.filterConstants.order.decrease;
-    this.filterSet.emit({
+    this.searchService.filterSettingsSubj.next({
       order: this.order,
       filterType: this.currentFilterType,
+      wordOrSentance: '',
     });
+    // this.filterSet.emit({
+    //   order: this.order,
+    //   filterType: this.currentFilterType,
+    // });
   }
 
   arrowDirectionChange() {
@@ -139,8 +181,13 @@ export class FilterComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.filterSet.emit({
+    this.searchService.filterSettingsSubj.next({
+      order: '',
       filterType: '',
+      wordOrSentance: '',
     });
+    // this.filterSet.emit({
+    //   filterType: '',
+    // });
   }
 }
