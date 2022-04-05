@@ -2,7 +2,6 @@
   <app-header></app-header>
   <app-filter (filterSet)="getFilterSettings($event)" *ngIf="$isFilterVisible | async"></app-filter>
 </header>
-
 <main>
-  <app-screen [filterSettings]="filterSettings" [posts]="posts"></app-screen>
+  <app-screen></app-screen>
 </main>

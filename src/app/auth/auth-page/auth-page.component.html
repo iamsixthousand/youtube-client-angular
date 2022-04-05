@@ -1,0 +1,66 @@
+<section class="form-section">
+  <form
+    class="form-element"
+    (ngSubmit)="formSubmit()"
+    [formGroup]="profileForm"
+  >
+    <ng-container *ngIf="profileForm.get('email') as email">
+      <div class="form-element__title-container">
+        <p class="form-element__title-text">Login:</p>
+        <span
+          class="form-element__error-msg"
+          *ngIf="email.errors?.['emailInUse']"
+        >
+          Email is already in use
+        </span>
+        <span
+          class="form-element__error-msg"
+          *ngIf="email.errors?.['required'] && email.touched"
+        >
+          Field is requiered
+        </span>
+        <span
+          class="form-element__error-msg"
+          *ngIf="email.errors?.['email'] && email.touched"
+        >
+          Provide a correct email
+        </span>
+      </div>
+      <input
+        class="form-element__input"
+        type="email"
+        formControlName="email"
+        [(ngModel)]="userEmail"
+        [ngClass]="{
+          error: email.errors && email.touched
+        }"
+      />
+    </ng-container>
+    <ng-container *ngIf="profileForm.get('password') as password">
+      <div class="form-element__title-container">
+        <p class="form-element__title-text">Password:</p>
+        <span
+          class="form-element__error-msg"
+          *ngIf="password.errors?.['minlength'] && password.touched"
+        >
+          Password must be at least 8 characters long.
+        </span>
+      </div>
+      <input
+        class="form-element__input"
+        type="password"
+        formControlName="password"
+        [(ngModel)]="userPassword"
+        [ngClass]="{
+          error: password.errors && password.touched
+        }"
+      />
+    </ng-container>
+    <input
+      class="form-element__button"
+      type="submit"
+      value="LOGIN"
+      [disabled]="!profileForm.valid"
+    />
+  </form>
+</section>

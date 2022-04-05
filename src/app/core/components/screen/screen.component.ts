@@ -1,16 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { FilterSettings } from 'src/interfaces/filter';
-import { PostItem } from 'src/interfaces/youtube';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-screen',
   templateUrl: './screen.component.html',
   styleUrls: ['./screen.component.scss'],
 })
-export class ScreenComponent {
-  @Input()
-  filterSettings?: FilterSettings;
-
-  @Input()
-  posts?: PostItem[];
-}
+export class ScreenComponent {}

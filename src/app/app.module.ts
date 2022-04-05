@@ -33,6 +33,9 @@ import { DislikesIconComponent } from './core/components/screen/card/card-stats/
 import { CommentsIconComponent } from './core/components/screen/card/card-stats/comments/comments-icon/comments-icon.component';
 import { LogoIconComponent } from './core/components/header/logo/logo-icon/logo-icon.component';
 import { SortByCriteriaPipe } from './pipes/sort-by-criteria.pipe';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -71,6 +74,8 @@ import { SortByCriteriaPipe } from './pipes/sort-by-criteria.pipe';
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],

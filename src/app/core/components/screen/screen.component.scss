@@ -9,5 +9,10 @@
   padding: 9rem 0 5rem 0;
   align-items: flex-start;
   justify-content: center;
-  background-color: var(--screen-bg);
+  background-color: rgba(0, 0, 0, 0.336);
+  background-image: url("^assets/bg-pic.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: color;
 }

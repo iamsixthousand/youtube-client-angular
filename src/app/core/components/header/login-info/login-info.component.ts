@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
+import { SearchServiceService } from 'src/app/core/services/search-service.service';
 import { RouterPath } from 'src/app/routes.enum';
 
 @Component({
@@ -11,7 +13,14 @@ import { RouterPath } from 'src/app/routes.enum';
 export class LoginInfoComponent {
   faUserCircle = faUserCircle;
 
-  constructor(private readonly router: Router) {}
+  userEmail$: Observable<string>;
+
+  constructor(
+    private readonly router: Router,
+    private readonly searchService: SearchServiceService
+  ) {
+    this.userEmail$ = this.searchService.userEmailObs$;
+  }
 
   toTheLoginPage() {
     this.router.navigate([RouterPath.Login]);

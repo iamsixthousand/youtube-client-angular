@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { FilterSettings } from 'src/interfaces/filter';
 import { PostItem } from 'src/interfaces/youtube';
 import data from 'src/response.json';
 
@@ -7,7 +8,22 @@ import data from 'src/response.json';
   providedIn: 'root',
 })
 export class SearchServiceService {
-  postData: PostItem[] = data.items;
+  filterSettingsSubj = new BehaviorSubject({
+    order: '',
+    filterType: '',
+    wordOrSentance: '',
+  });
+
+  userEmailSubj: BehaviorSubject<string> = new BehaviorSubject('Login Info');
+
+  userEmailObs$: Observable<string> = this.userEmailSubj.asObservable();
+
+  filterSettingsObs$: Observable<FilterSettings> =
+    this.filterSettingsSubj.asObservable();
+
+  postDataSubj: BehaviorSubject<PostItem[]> = new BehaviorSubject(data.items);
+
+  postDataObs$: Observable<PostItem[]> = this.postDataSubj.asObservable();
 
   #showFilter: boolean = false;
 
